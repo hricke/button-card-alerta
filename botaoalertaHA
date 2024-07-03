@@ -1,6 +1,6 @@
 type: custom:button-card
 color_type: card
-entity: binary_sensor.porta_da_sala_zigbee_porta
+entity: binary_sensor.porta_da_sala_zigbee_porta #AQUI SERA ONDE VC ESCOLHE A ENTIDADE OU SEJA O DISPOSITIVO#
 name: Status Portão Garagem
 state:
   - value: 'on'
