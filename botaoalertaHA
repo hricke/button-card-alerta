@@ -1,24 +1,22 @@
 type: custom:button-card
 color_type: card
 entity: binary_sensor.porta_da_sala_zigbee_porta
-name: null
+name: Status Portão Garagem
 state:
   - value: 'on'
     color: red
     icon: mdi:alert
     styles:
       card:
-      name:
-        - font-weight: bold
-        - font-size: 50px  
         - animation: blink 2s ease infinite
-        
-    name: 'Garagem: ABERTA!'
+        - font-size: 45px
+        - font-weight: bold
+    name: Garagem ABERTA!
   - operator: default
     color: green
     icon: mdi:shield-check
-    name: 'Garagem: FECHADA'
+    name: Garagem FECHADA
     styles:
       name:
         - font-weight: bold
-        - font-size: 50px
+        - font-size: 42px
