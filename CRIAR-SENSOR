@@ -1,5 +1,20 @@
 {% if states('sensor.tomada_inteligente_potencia#AQUI-COLOCA-NOME-DO-SENSOR')|float > 10 %}
           Ligado
+        {% else %} <- // AQUI É ON //
+          Desligada 
+        {% endif %} <- // aqui é OFF //
+
+
+tomada_inteligente_potencia
+
+
+#FORMA DE CRIAR UM SENSOR NO SENSOR TEMPLANTE
+
+
+###############################################################################################
+
+{% if states('sensor.tomada_inteligente_tensao')|float > 10 %}
+          Ligado
         {% else %}
           Desligada
         {% endif %}
@@ -7,5 +22,13 @@
 
 tomada_inteligente_potencia
 
+sensor.tomada_inteligente_tensao
 
-#FORMA DE CRIAR UM SENSOR NO SENSOR TEMPLANTE
+
+0,851 A -> SE FOR EM AMPERES FICA ASSIM 
+
+{% if states('sensor.tomada_inteligente_tensao') | float > 0.700 %}
+  CORRENDO
+{% else %}
+  PARADO
+{% endif %}
