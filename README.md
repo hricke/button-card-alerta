@@ -3,7 +3,7 @@
 
 type: custom:button-card
 entity: sensor.status_tomada_222   ############ ENTIDADE
-icon: mdi:cctv ############### AQUI É O ICONE QUE FICA QUANDO TIVER LIGADO
+icon: mdi:cctv ############### AQUI É O ICONE QUE FICA QUANDO TIVER DESLIGADO
 name: Monitor Quarto ############## NMOME
 tap_action:
   action: call-service
@@ -14,6 +14,6 @@ show_state: true
 state:
   - value: Ligado ########### COLOCAR O MESMO NOME DO STATUS DO SENSOR ON OU OFF TIPO CORRENDO OOU PARADO
     color: rgb(189, 255, 5)
-    icon: mdi: ############## AQUI É O ICONE QUE FICA QUANDO TIVER DESLIGADO
+    icon: mdi: ############## AQUI É O ICONE QUE FICA QUANDO TIVER LIGADO
   - value: Desligado ########### COLOCAR O MESMO NOME DO STATUS DO SENSOR ON OU OFF TIPO CORRENDO OOU PARADO
     color: var(--disabled-text-color)
