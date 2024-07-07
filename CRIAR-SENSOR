@@ -1,0 +1,11 @@
+{% if states('sensor.tomada_inteligente_potencia#AQUI-COLOCA-NOME-DO-SENSOR')|float > 10 %}
+          Ligado
+        {% else %}
+          Desligada
+        {% endif %}
+
+
+tomada_inteligente_potencia
+
+
+#FORMA DE CRIAR UM SENSOR NO SENSOR TEMPLANTE
