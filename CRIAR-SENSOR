@@ -1,3 +1,11 @@
+1 - TEM QUE CRIAR O SENSOR PARA ISSO VC PRECISA ACHAR ELE LA NA INTERAÇAO DO TUYA E VER SE EELE ESTA HABILITADO
+2 - VAI EM CRIRAR AUXILIAR 
+3 - TEMPLATE
+4 - TEMPLATE A SENSOR
+5 - COLOCA O COFIGO ACIMA E ALTERAR A ENTIDADE/NO CASO COLOCA O SENSOR QUE VC QUER PARA RECEBER STATUS E O NOMEIA PARA LIGADO OU DESLIGA OU ON E OFF
+
+###############################################################################################
+
 {% if states('sensor.tomada_inteligente_potencia#AQUI-COLOCA-NOME-DO-SENSOR')|float > 10 %}
           Ligado
         {% else %} <- // AQUI É ON //
@@ -32,3 +40,5 @@ sensor.tomada_inteligente_tensao
 {% else %}
   PARADO
 {% endif %}
+
+###################################################################################################################
