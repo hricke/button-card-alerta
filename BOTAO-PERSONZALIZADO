@@ -13,10 +13,10 @@ tap_action:
     entity_id: input_select.cube_mode
 show_state: true
 state:
-  - value: Ligado ########### COLOCAR O MESMO NOME DO STATUS DO SENSOR ON OU OFF TIPO CORRENDO OOU PARADO
+  - value: Ligado ########### COLOCAR O MESMO NOME DO STATUS DO SENSOR ON OU OFF TIPO CORRENDO OOU PARADO (((((( COLOCAR DA MESA FORMA QUE COLOCOU NA HORA DE CRIAR A TEMPLATE )))))))))))
     color: rgb(255,215,0)
     icon: mdi:television-guide ############## AQUI É O ICONE QUE FICA QUANDO TIVER LIGADO
-  - value: Desligado ########### COLOCAR O MESMO NOME DO STATUS DO SENSOR ON OU OFF TIPO CORRENDO OOU PARADO
+  - value: Desligado ########### COLOCAR O MESMO NOME DO STATUS DO SENSOR ON OU OFF TIPO CORRENDO OOU PARADO (((((( COLOCAR DA MESA FORMA QUE COLOCOU NA HORA DE CRIAR A TEMPLATE )))))))))))
     color: var(--disabled-text-color)
 styles:
   card:
