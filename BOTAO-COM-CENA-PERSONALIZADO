@@ -1,3 +1,6 @@
+####### BOTAO ANIMADO QUE AO CLICAR NELE , ELE EXECUTA A CENA E ESSE BOTAO MUDA A COR AO MUDAR DE STATUS TAMBEM ###############
+
+
 type: custom:button-card
 entity: sensor.status_da_tv_sala
 icon: mdi:television-classic-off
