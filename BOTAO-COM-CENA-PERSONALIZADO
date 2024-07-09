@@ -1,0 +1,20 @@
+type: custom:button-card
+entity: sensor.status_da_tv_sala
+icon: mdi:television-classic-off
+name: TV
+tap_action:
+  action: call-service
+  service: scene.turn_on ############ NOME DA CENA AAQUI A CENA QUE VAI SER ATIVADA AO CLICAR NO BOTÃO
+  service_data:
+    entity_id: scene.tv_on_off ########### NOME DA SENA
+show_state: true
+state:
+  - value: Ligada
+    color: rgb(255,215,0)
+    icon: mdi:television-ambient-light
+  - value: Desligada
+    color: var(--disabled-text-color)
+    font-e: 20px
+styles:
+  card:
+    - font-size: 17px
