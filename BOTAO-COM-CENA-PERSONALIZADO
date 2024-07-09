@@ -4,9 +4,9 @@ icon: mdi:television-classic-off
 name: TV
 tap_action:
   action: call-service
-  service: scene.turn_on ############ NOME DA CENA AAQUI A CENA QUE VAI SER ATIVADA AO CLICAR NO BOTÃO
+  service: scene.turn_on ############ AQUI ESSA É TIPO A CONFIG QUE FAZ CHAMAR A CENA DESEJADA!
   service_data:
-    entity_id: scene.tv_on_off ########### NOME DA SENA
+    entity_id: scene.tv_on_off ########### NOME DA CENA
 show_state: true
 state:
   - value: Ligada
