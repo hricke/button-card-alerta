@@ -1,0 +1,7 @@
+################ template para somar quantas luzes estão LIGADAS ############################
+
+1 - CRIA O GRUPO PELOS AUXILIARES 
+2 - CRIA O TEMPLATE COM O CODIGO A BAIXO
+
+{{ expand('******AQUI O NOME DO GRUUPO******') | selectattr('state', 'eq',
+              'on') | list | count }} ligadas
