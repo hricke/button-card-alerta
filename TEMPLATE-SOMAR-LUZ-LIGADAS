@@ -5,3 +5,16 @@
 
 {{ expand('******AQUI O NOME DO GRUUPO******') | selectattr('state', 'eq',
               'on') | list | count }} ligadas
+
+###############################################################################################
+
+----------- AQUI EMBAIXO AGORA O TEXTO EM PLUTAL APOS MAIS DE 1 LUZ LIGADA -----------------
+
+{%- set ligadas = expand('switch.grupo_switch_luzes_da_casa')
+                     | selectattr('state', 'eq', 'on') | list -%}
+  {%- set count = ligadas | count -%}
+  {%- if count == 1 -%}
+    Luz ligada
+  {%- else -%}
+    {{ count }} Luzes ligadas
+  {%- endif -%}
