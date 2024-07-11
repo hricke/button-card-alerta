@@ -18,3 +18,19 @@
   {%- else -%}
     {{ count }} Luzes ligadas
   {%- endif -%}
+
+######################################################################
+
+melhoras no template
+
+
+          {% set ligadas = expand('switch.grupo_switch_luzes_da_casa')
+                           | selectattr('state', 'eq', 'on') | list %}
+          {% set count = ligadas | count %}
+          {% if count == 0 %}
+            0 Luz Ligada, TOP!
+          {% elif count == 1 %}
+            1 Luz Ligada
+          {% else %}
+            {{ count }} Luzes Ligadas
+          {% endif %}
