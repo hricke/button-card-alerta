@@ -34,3 +34,37 @@ melhoras no template
           {% else %}
             {{ count }} Luzes Ligadas
           {% endif %}
+
+----------------------------------------------------------------------------------------
+
+--------- botao --------------------
+
+type: custom:button-card
+entity: sensor.luzes_ligadas_02
+icon: mdi:lightbulb-on
+name: ' '
+tap_action:
+  action: call-service
+  service: input_select.select_next
+  data:
+    entity_id: sensor.luzes_ligadas_02
+show_state: true
+state:
+  - value: sleeping
+    color: var(--disabled-text-color)
+    icon: mdi:cube-outline
+  - value: media
+    color: rgb(5, 147, 255)
+  - value: light
+    color: rgb(189, 255, 5)
+styles:
+  card:
+    - width: 200px  # Largura do cartão
+    - height: 100px  # Altura do cartão
+  icon:
+    - width: 50px  # Largura do ícone
+    - height: 50px  # Altura do ícone
+  name:
+    - font-size: 10px  # Tamanho da fonte do nome
+
+
