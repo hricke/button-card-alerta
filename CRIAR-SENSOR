@@ -55,3 +55,29 @@ sensor.tomada_inteligente_tensao
   2 máquinas ligadas em uso
 {% endif %}
 
+################ BOTAO DA MAQUINA DE LAVAR COM 3 STATUS E ICONES - BUTTON CARD #############################################################
+
+
+type: custom:button-card
+entity: sensor.status_maquina_de_lavar_template
+icon: mdi:washing-machine-off
+name: Lava Roupa
+tap_action:
+  action: call-service
+  service: scene.cena_para_on_off_maquina_lavar
+  service_data:
+    entity_id: null
+show_state: true
+state:
+  - value: Regua Ligada
+    color: rgb(255,215,0)
+    icon:  mdi:washing-machine
+  - value: Ligada em uso
+    color: rgb(255,215,0)
+    icon: mdi:washing-machine
+  - value: Desligada
+    color: var(--disabled-text-color)
+    font-e: 20px
+styles:
+  card:
+    - font-size: 17px
