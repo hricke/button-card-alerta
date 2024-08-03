@@ -1,0 +1,25 @@
+A quem interessar, segue configuração para contar QUANTAS VEZES e por QUANTO TEMPO um dispositivo está ligado.
+
+
+Para tal, deve-se adicionar o código abaixo no arquivo Configuration.yaml e no “entity_id” você deve substituir para A SUA ENTIDADE que deseja monitorar.
+
+-------------------------------------------------------------------------------------------------------
+sensor:
+  - platform: history_stats
+    name: Tempo Boiler Ligado
+    entity_id: switch.sonoff_boiler
+    state: 'on'
+    type: time
+    start: '{{ now().replace(day=1).replace(hour=0).replace(minute=0).replace(second=0) }}'
+    end: '{{ now() }}'
+
+  - platform: history_stats
+    name: Quantidade Boiler Ligado
+    entity_id: switch.sonoff_boiler
+    state: 'on'
+    type: count
+    start: '{{ now().replace(day=1).replace(hour=0).replace(minute=0).replace(second=0) }}'
+    end: '{{ now() }}'
+-----------------------------------------------------------------------------------------------------
+No caso do código acima, o contador de VEZES (count) e TEMPO (time) é reiniciado todo DIA 1 de CADA MÊS.
+Para maiores informações e outras opções, consultem: https://www.home-assistant.io/components/history_stats/ 152
