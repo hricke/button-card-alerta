@@ -1,0 +1,29 @@
+/////////////////////// CONTADOR DE DISPOSITIVOS OFFLINE //////////////////////////////////////
+
+######################## template DE SENSOR PARA 1 ENTIDADE APENAS #######################
+
+{%- set group_entities = expand('switch.grupo_switch_luzes_sonoff') -%}
+{%- set unavailable_devices = group_entities | selectattr('state', 'eq', 'unavailable') | list -%}
+{%- set count_unavailable = unavailable_devices | count -%}
+{%- if count_unavailable == 1 -%}
+  1 Dispositivo Unavailable (((((((((( texto que quer colocar )))))))))))))))))))
+{%- elif count_unavailable > 1 -%}
+  {{ count_unavailable }} Dispositivos Unavailable (((((((((( texto que quer colocar )))))))))))))))))))
+{%- else -%}
+  0 Dispositivo Unavailable (((((((((( texto que quer colocar )))))))))))))))))))
+{%- endif -%}
+
+########################### 2 ENTIDADES PARA CRIAR SENSOR DE DISPOSITVOS OFFLINE TEMPLATE ######################################
+
+{%- set switch_entities = expand('switch.grupo_switch_luzes_sonoff') -%} --------------------------- ENTIDADES switch
+{%- set light_entities = expand('light.grupo_luzes_tuya') -%} --------------------------- ENTIDADES light
+{%- set all_entities = switch_entities + light_entities -%}
+{%- set unavailable_devices = all_entities | selectattr('state', 'eq', 'unavailable') | list -%}
+{%- set count_unavailable = unavailable_devices | count -%}
+{%- if count_unavailable == 1 -%}
+  1 Dispositivo Unavailable (((((((((( texto que quer colocar )))))))))))))))))))
+{%- elif count_unavailable > 1 -%}
+  {{ count_unavailable }} Dispositivos Unavailable (((((((((( texto que quer colocar )))))))))))))))))))
+{%- else -%}
+  0 Dispositivo Unavailable (((((((((( texto que quer colocar )))))))))))))))))))
+{%- endif -%}
