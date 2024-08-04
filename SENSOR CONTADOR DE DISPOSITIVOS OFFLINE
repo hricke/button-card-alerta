@@ -2,7 +2,7 @@
 
 ######################## template DE SENSOR PARA 1 ENTIDADE APENAS #######################
 
-{%- set group_entities = expand('switch.grupo_switch_luzes_sonoff') -%}
+{%- set group_entities = expand('switch.grupo_switch_luzes_sonoff') -%} --------------------------- ENTIDADE switch
 {%- set unavailable_devices = group_entities | selectattr('state', 'eq', 'unavailable') | list -%}
 {%- set count_unavailable = unavailable_devices | count -%}
 {%- if count_unavailable == 1 -%}
