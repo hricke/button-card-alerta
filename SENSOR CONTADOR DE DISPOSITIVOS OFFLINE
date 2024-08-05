@@ -1,6 +1,6 @@
 /////////////////////// CONTADOR DE DISPOSITIVOS OFFLINE //////////////////////////////////////
 
-################################## AQUI É MESMA COISA DOS ABAIXO POREM ESSE AQUI APARECE O NOME DO DISPOSITIVO OFF #####################################################
+################################## AQUI É 2 entidades MESMA COISA DOS ABAIXO POREM ESSE AQUI APARECE O NOME DO DISPOSITIVO OFF #####################################################
 
 {%- set switch_entities = expand('switch.grupo_switch_luzes_sonoff') -%}
 {%- set light_entities = expand('light.grupo_luzes_tuya') -%}
@@ -20,16 +20,18 @@
 
 ######################## template DE SENSOR PARA 1 ENTIDADE APENAS #######################
 
-{%- set group_entities = expand('switch.grupo_switch_luzes_sonoff') -%} --------------------------- ENTIDADE switch
-{%- set unavailable_devices = group_entities | selectattr('state', 'eq', 'unavailable') | list -%}
-{%- set count_unavailable = unavailable_devices | count -%}
-{%- if count_unavailable == 1 -%}
-  1 Dispositivo Unavailable (((((((((( texto que quer colocar )))))))))))))))))))
-{%- elif count_unavailable > 1 -%}
-  {{ count_unavailable }} Dispositivos Unavailable (((((((((( texto que quer colocar )))))))))))))))))))
+{%- set entities = expand('light.grupo_de_ligth_full') -%}
+{%- set unavailable_devices = entities | selectattr('state', 'eq', 'unavailable') | list -%}
+{%- set count_unavailable = unavailable_devices | length -%}
+
+{%- if count_unavailable == 0 -%}
+  Todos os dispositivos estão disponíveis
+{%- elif count_unavailable == 1 -%}
+  1 dispositivo unavailable
 {%- else -%}
-  0 Dispositivo Unavailable (((((((((( texto que quer colocar )))))))))))))))))))
+  {{ count_unavailable }} dispositivos unavailable
 {%- endif -%}
+
 
 ########################### 2 ENTIDADES PARA CRIAR SENSOR DE DISPOSITVOS OFFLINE TEMPLATE ######################################
 
@@ -44,4 +46,21 @@
   {{ count_unavailable }} Dispositivos Unavailable (((((((((( texto que quer colocar )))))))))))))))))))
 {%- else -%}
   0 Dispositivo Unavailable (((((((((( texto que quer colocar )))))))))))))))))))
+{%- endif -%}
+
+###################################### AQUI É UM CONTADOR DE DISPOSITIVOS OFF COM NOME ###################################################################################
+
+{%- set entities = expand('light.grupo_de_ligth_full') -%}
+{%- set unavailable_devices = entities | selectattr('state', 'eq', 'unavailable') | list -%}
+{%- set count_unavailable = unavailable_devices | length -%}
+
+{%- if count_unavailable == 0 -%}
+  Todos os dispositivos estão disponíveis
+{%- elif count_unavailable == 1 -%}
+  1 dispositivo unavailable: {{ unavailable_devices[0].name }}
+{%- else -%}
+  {{ count_unavailable }} dispositivos unavailable: 
+  {%- for device in unavailable_devices -%}
+    {{ device.name }}{% if not loop.last %}, {% endif %}
+  {%- endfor -%}
 {%- endif -%}
