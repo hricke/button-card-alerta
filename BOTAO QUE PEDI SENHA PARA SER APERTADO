@@ -1,0 +1,30 @@
+############# BOTAO QUE PEDI SENHA #######################
+
+
+type: custom:restriction-card
+duration: 5
+restrictions:
+  pin:
+    code: 1234
+    text: Ingrese el código para abrir el portón
+card:
+  type: button
+  tap_action:
+    action: toggle
+  entity: light.abajur
+  name: Puerta Garaje
+
+
+#################### BOTAO QUE PEDI SENHA ##########################
+
+type: custom:restriction-card
+duration: 5
+restrictions:
+  confirm:
+    text: ¿Está seguro que desea desbloquear la tarjeta?
+card:
+  type: button
+  tap_action:
+    action: toggle
+  entity: light.abajur
+  name: Puerta Garaje
